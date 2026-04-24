@@ -33,6 +33,11 @@ KAGGLE_DATABASE_FILE = "rideshare.db"
 IMDB_DEFAULT_DATABASE_PATH = Path("/workspaces/aButtTonOfSqlQuestions/datasets/sqlite/imdb_movies.db")
 IMDB_KAGGLE_DATASET_NAME = "poojapragatika/sql-based-imdb-data-for-analysis-projects"
 IMDB_KAGGLE_DATABASE_FILE = "movies.sqlite"
+SOCIAL_MEDIA_ADS_DEFAULT_DATABASE_PATH = Path(
+    "/workspaces/aButtTonOfSqlQuestions/datasets/sqlite/social_media_advertisement_performance.db"
+)
+SOCIAL_MEDIA_ADS_KAGGLE_DATASET_NAME = "alperenmyung/social-media-advertisement-performance"
+SOCIAL_MEDIA_ADS_KAGGLE_DATABASE_FILE = "ad_campaign_db.sqlite"
 
 
 def _ensure_sql_magic(database_path: Path, *, verify: bool) -> Path:
@@ -105,6 +110,23 @@ def _download_imdb_database(database_path: Path) -> Path:
     return database_path
 
 
+def _download_social_media_ads_database(database_path: Path) -> Path:
+    """Download the social-media ads dataset and copy the SQLite database into place."""
+
+    try:
+        kagglehub = import_module("kagglehub")
+    except ImportError as error:
+        raise ImportError("kagglehub is required to download the social-media ads dataset.") from error
+
+    source_database = (
+        Path(kagglehub.dataset_download(SOCIAL_MEDIA_ADS_KAGGLE_DATASET_NAME))
+        / SOCIAL_MEDIA_ADS_KAGGLE_DATABASE_FILE
+    )
+    database_path.parent.mkdir(parents=True, exist_ok=True)
+    copy2(source_database, database_path)
+    return database_path
+
+
 def setup_sql_notebook(
     database_path: str | Path = DEFAULT_DATABASE_PATH,
     *,
@@ -169,5 +191,19 @@ def setup_imdb_sql_notebook(
     database_path = Path(database_path).expanduser().resolve()
     if not database_path.exists():
         _download_imdb_database(database_path)
+
+    return setup_sql_notebook(database_path=database_path, verify=verify)
+
+
+def setup_social_media_ads_sql_notebook(
+    database_path: str | Path = SOCIAL_MEDIA_ADS_DEFAULT_DATABASE_PATH,
+    *,
+    verify: bool = True,
+) -> Path:
+    """Convenience wrapper for social-media advertisement SQL notebooks."""
+
+    database_path = Path(database_path).expanduser().resolve()
+    if not database_path.exists():
+        _download_social_media_ads_database(database_path)
 
     return setup_sql_notebook(database_path=database_path, verify=verify)
