@@ -18,6 +18,8 @@ Generate exercises aligned to Unit 4 SQL patterns seen in 2017-2025 papers and m
 
 Use realistic business-style contexts and linked tables when the dataset supports them.
 
+Read [the reference docs](docs/unit4-sql-reference.md) to understand the level and scope of query asked in a Unit 4 A-Level Computer Science Exam.
+
 ## Constraints
 - If the user does not provide a Kaggle dataset, ask for one before generating exercises.
 - Do not invent unsupported schema details.
@@ -28,6 +30,7 @@ Use realistic business-style contexts and linked tables when the dataset support
 - Ensure text literals are quoted and numeric literals are not quoted.
 - Every SQL answer cell must start with ipython-sql cell magic: %%sql
 - Name output notebooks using: <base>_solutions.ipynb and <base>_students.ipynb.
+- Queries should output a maximum of 6 items. Avoid using `LIMIT` where possible to create a more authentic experience.
 
 ## Required Workflow
 1. Confirm dataset source.

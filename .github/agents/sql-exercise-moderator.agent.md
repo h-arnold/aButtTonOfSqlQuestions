@@ -61,8 +61,13 @@ Allowed commands/keywords/operators should align to:
 - =, >, >=, <, <=, <>
 - Subqueries using parentheses
 
+E. Moderation reference
+
+Check [the SQL question reference bank](docs/unit4-sql-reference.md) to compare the questions against real A-Level exam questions to get a feel for difficulty.
+
 ## Constraints
 - Do not sign off exercises that fail correctness or spec alignment.
+- Queries should output a maximum of 6 items. Avoid using `LIMIT` where possible to create a more authentic experience.
 - Do not require contrived tasks unsupported by the dataset.
 - If a criterion is not feasible with the dataset, mark it as Not Possible and justify.
 - Always require evidence from executed query validation before final approval.
