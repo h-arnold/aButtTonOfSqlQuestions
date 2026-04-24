@@ -80,6 +80,18 @@ This should open the databse using the pre-installed `SQLite Viewer` extension.
 
 ## Currently Available Notebooks
 
- - [Uber Rideshare Dataset](./notebooks/uber_sql_exercise_01/uber_sql_exercise_01_students.ipynb) - A dataset containing information about Uber rides, including pickup and dropoff locations, timestamps, and fare amounts.
- - [The IMDB Movie Dataset](./notebooks/imdb_sql_exercise_01/imdb_sql_exercise_01_students.ipynb) - A dataset containing information about movies, including titles, release years, genres, and ratings.
+### Uber Rideshare Dataset
+A dataset containing information about Uber rides, including pickup and dropoff locations, timestamps, and fare amounts.
+- [Exercise Set 01](./notebooks/uber_sql_exercise_01/uber_sql_exercise_01_students.ipynb)
+- [Exercise Set 02](./notebooks/uber_sql_exercise_02/uber_sql_exercise_02_students.ipynb)
+
+### IMDB Movie Dataset
+A dataset containing information about movies, including titles, release years, genres, and ratings.
+- [Exercise Set 01](./notebooks/imdb_sql_exercise_01/imdb_sql_exercise_01_students.ipynb)
+- [Exercise Set 02](./notebooks/imdb_sql_exercise_02/imdb_sql_exercise_02_students.ipynb)
+
+### Social Media Advertisement Performance Dataset
+A dataset containing information about social media ad campaigns, user targeting, and engagement events.
+- [Exercise Set 01](./notebooks/social_media_advertisement_performance_sql_exercise_01/social_media_advertisement_performance_sql_exercise_01_students.ipynb)
+- [Exercise Set 02](./notebooks/social_media_advertisement_performance_sql_exercise_02/social_media_advertisement_performance_sql_exercise_02_students.ipynb)
 
