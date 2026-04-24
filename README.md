@@ -1,4 +1,4 @@
-# aButtTonOfSqlQuestions
+# A Butt-Ton of SQL Questions
 
 A-Level Computer Science SQL practice repository.
 
@@ -6,7 +6,7 @@ This repo is designed as a central place for A-Level students to practice SQL qu
 
 It is designed to be a one stop shop with a pre-configured devcontainer environment that includes all necessary tools and libraries to get started with SQL practice immediately.
 
-- [aButtTonOfSqlQuestions](#abutttonofsqlquestions)
+- [A Butt-Ton of SQL Questions](#a-butt-ton-of-sql-questions)
   - [Fun fact](#fun-fact)
   - [How to use this resource](#how-to-use-this-resource)
     - [1. Open this repository in a GitHub Codespace (below) or clone the repo to your local machine:](#1-open-this-repository-in-a-github-codespace-below-or-clone-the-repo-to-your-local-machine)
