@@ -1,2 +1,2 @@
 .venv
-datasets/sqlite/**
+datasets/sqlite/**/*
