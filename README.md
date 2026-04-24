@@ -39,6 +39,8 @@ These dependencies include support for running SQL in notebooks via ipython-sql.
 
 Open the template notebook in notebooks/template_sql_exercises.ipynb.
 
+The Uber practice notebooks live in notebooks/uber_sql_exercise_01/.
+
 Typical notebook setup cell for SQLite:
 
 %load_ext sql
