@@ -53,3 +53,8 @@ To help you construct your queries, you can view the structure of the tables by 
 This should open the databse using the pre-installed `SQLite Viewer` extension.
 
 ![A screenshot of the Uber dataset open in the SQLite Viewer VSCode extension](image-5.png)
+
+## Currently Available Notebooks
+
+ - [Uber Rideshare Dataset](./notebooks/uber_sql_exercise_01/uber_sql_exercise_01_students.ipynb) - A dataset containing information about Uber rides, including pickup and dropoff locations, timestamps, and fare amounts.
+ 
