@@ -6,6 +6,16 @@ This repo is designed as a central place for A-Level students to practice SQL qu
 
 It is designed to be a one stop shop with a pre-configured devcontainer environment that includes all necessary tools and libraries to get started with SQL practice immediately.
 
+- [aButtTonOfSqlQuestions](#abutttonofsqlquestions)
+  - [Fun fact](#fun-fact)
+  - [How to use this resource](#how-to-use-this-resource)
+    - [1. Open this repository in a GitHub Codespace (below) or clone the repo to your local machine:](#1-open-this-repository-in-a-github-codespace-below-or-clone-the-repo-to-your-local-machine)
+    - [2. Choose a notebook to practise with](#2-choose-a-notebook-to-practise-with)
+    - [3. Write your SQL queries](#3-write-your-sql-queries)
+    - [4. Viewing the datasets](#4-viewing-the-datasets)
+  - [Currently Available Notebooks](#currently-available-notebooks)
+
+
 ## Fun fact
 
 A Butt is a real, if obscure, unit of measurement for wine casks, approximately 126 gallons or 477 liters. It was historically used in the wine trade and is still referenced in some contexts today.
@@ -57,4 +67,4 @@ This should open the databse using the pre-installed `SQLite Viewer` extension.
 ## Currently Available Notebooks
 
  - [Uber Rideshare Dataset](./notebooks/uber_sql_exercise_01/uber_sql_exercise_01_students.ipynb) - A dataset containing information about Uber rides, including pickup and dropoff locations, timestamps, and fare amounts.
- 
+
