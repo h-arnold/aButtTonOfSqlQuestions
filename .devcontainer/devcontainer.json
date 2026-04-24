@@ -4,11 +4,23 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "jupyter.notebookFileRoot": "${containerWorkspaceFolder}",
+        "jupyter.askForKernelRestart": false,
+        "notebook.output.scrolling": true,
+        "notebook.lineNumbers": "on",
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000
+      },
       "extensions": [
         "ms-python.python",
-        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "qwtel.sqlite-viewer"
       ]
     }
   },
-  "postStartCommand": "bash -lc 'python -m pip install --upgrade pip && python -m pip install -r requirements.txt'"
+  "postCreateCommand": "bash -lc 'if [ ! -x .venv/bin/python ]; then python -m venv .venv; fi && .venv/bin/python -m pip install --upgrade pip && .venv/bin/python -m pip install -r requirements.txt'"
 }
