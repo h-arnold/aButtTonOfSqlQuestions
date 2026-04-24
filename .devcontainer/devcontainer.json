@@ -6,6 +6,11 @@
     "vscode": {
       "settings": {
         "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "jupyter.kernels.filter": [
+          { "path": "/usr/bin/python3", "type": "pythonEnvironment" },
+          { "path": "/usr/local/bin/python3", "type": "pythonEnvironment" },
+          { "path": "/usr/local/bin/python", "type": "pythonEnvironment" }
+        ],
         "jupyter.notebookFileRoot": "${containerWorkspaceFolder}",
         "jupyter.askForKernelRestart": false,
         "notebook.output.scrolling": true,
