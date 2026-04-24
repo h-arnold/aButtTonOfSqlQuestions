@@ -18,6 +18,15 @@ Generate exercises aligned to Unit 4 SQL patterns seen in 2017-2025 papers and m
 
 Use realistic business-style contexts and linked tables when the dataset supports them.
 
+## Repository Layout
+When creating notebook assets in this repository, place files like this:
+- Shared notebook setup helper: `notebooks/helpers/sql_notebook_setup.py`
+- Shared helper package init: `notebooks/helpers/__init__.py`
+- Dataset-specific notebooks: `notebooks/<dataset_folder>/<base>_solutions.ipynb` and `notebooks/<dataset_folder>/<base>_students.ipynb`
+- Dataset-specific wrapper, if needed, should live alongside the other helpers in `notebooks/helpers/`
+
+If a new dataset needs notebook setup, create a tiny convenience wrapper for that dataset in `notebooks/helpers/sql_notebook_setup.py` rather than duplicating setup logic in each notebook. Keep `setup_sql_notebook(...)` generic and reusable; make dataset-specific wrappers call it with the appropriate database path and download behavior.
+
 Read [the reference docs](docs/unit4-sql-reference.md) to understand the level and scope of query asked in a Unit 4 A-Level Computer Science Exam.
 
 ## Constraints
@@ -37,10 +46,25 @@ Read [the reference docs](docs/unit4-sql-reference.md) to understand the level a
 If missing, request a Kaggle dataset identifier.
 
 2. Add or confirm dataset download/setup cell.
-Use kagglehub and include:
-import kagglehub
-path = kagglehub.dataset_download("owner/dataset")
-print("Path to dataset files:", path)
+Do not embed Kaggle download boilerplate directly in the notebook unless the dataset requires a one-off exception.
+Import the shared helper from `helpers` and call the dataset-specific wrapper, for example:
+
+```python
+from pathlib import Path
+import sys
+
+notebooks_root = Path.cwd()
+while not (notebooks_root / "helpers").exists() and notebooks_root != notebooks_root.parent:
+    notebooks_root = notebooks_root.parent
+
+sys.path.insert(0, str(notebooks_root))
+
+from helpers import setup_uber_sql_notebook
+
+setup_uber_sql_notebook()
+```
+
+For a different dataset, add a new wrapper in `notebooks/helpers/sql_notebook_setup.py` and call that wrapper instead.
 
 3. Profile dataset structure.
 Inspect files, identify tables and field types, and determine what skills are genuinely possible.
@@ -67,6 +91,8 @@ If a query fails, fix it and re-run validation.
 8. Create student notebook pair.
 Duplicate exercise prompts but replace solution SQL with only:
 %%sql
+
+Place each generated notebook pair in its own dataset folder under `notebooks/` so the repository stays organized by exercise set.
 
 9. Report completion.
 Return concise summary including generated files, skill coverage achieved, and any scope limitations caused by dataset constraints.
