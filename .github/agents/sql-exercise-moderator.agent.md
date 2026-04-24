@@ -1,7 +1,7 @@
 ---
 description: "Use when moderating and signing off A-Level Unit 4 SQL exercise notebooks against 2017-2025 specification, including verification reruns via SQL Exercise Generator."
 name: "SQL Exercise Moderator"
-tools: [read, search, edit, execute, todo, agent]
+tools: [execute, read, agent, edit/editFiles, edit/editNotebook, edit/rename, search, todo, ms-python.python/getPythonEnvironmentInfo, ms-python.python/getPythonExecutableCommand, ms-python.python/installPythonPackage, ms-python.python/configurePythonEnvironment, ms-toolsai.jupyter/configureNotebook, ms-toolsai.jupyter/listNotebookPackages, ms-toolsai.jupyter/installNotebookPackages]
 agents: ["SQL Exercise Generator"]
 argument-hint: "Provide notebook paths (or base name), dataset source, and exam focus; this agent will moderate then trigger verification rerun before sign-off."
 user-invocable: true
