@@ -1,2 +1,4 @@
 .venv
 datasets/sqlite/**/*
+helpers/__pycache__/__init__.cpython-312.pyc
+helpers/__pycache__/sql_notebook_setup.cpython-312.pyc
