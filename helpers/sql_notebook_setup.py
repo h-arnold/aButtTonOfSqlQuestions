@@ -28,7 +28,7 @@ from pathlib import Path
 from shutil import copy2
 
 DEFAULT_DATABASE_PATH = Path("/workspaces/aButtTonOfSqlQuestions/datasets/sqlite/uber_rideshare.db")
-KAGGLE_DATASET_NAME = "rockyt07/uber-sql-database"
+KAGGLE_DATASET_NAME = "arjuntimes/uber-sql-database"
 KAGGLE_DATABASE_FILE = "rideshare.db"
 IMDB_DEFAULT_DATABASE_PATH = Path("/workspaces/aButtTonOfSqlQuestions/datasets/sqlite/imdb_movies.db")
 IMDB_KAGGLE_DATASET_NAME = "poojapragatika/sql-based-imdb-data-for-analysis-projects"
